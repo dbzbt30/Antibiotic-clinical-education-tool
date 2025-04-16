@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canadian Antibiotic Recommendation Tool</title>
+    <meta name="description" content="Evidence-based antibiotic recommendations based on Canadian guidelines for resident physicians">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Apple-style fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-container">
+            <h1>Canadian Antibiotic Guide</h1>
+            <div class="age-toggle">
+                <button id="adult-toggle" class="toggle-btn active">Adult</button>
+                <button id="pediatric-toggle" class="toggle-btn">Pediatric</button>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search infections or antibiotics...">
+            <button id="search-btn" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <nav class="category-nav">
+        <div class="scroll-container">
+            <button class="category-btn" data-category="cns">Central</button>
+            <button class="category-btn" data-category="respiratory">Respiratory</button>
+            <button class="category-btn" data-category="gu">Genitourinary</button>
+            <button class="category-btn" data-category="skin">Skin</button>
+            <button class="category-btn" data-category="gi">Gastrointestinal</button>
+            <button class="category-btn" data-category="bone">Bone</button>
+            <button class="category-btn" data-category="cardio">Cardiovascular</button>
+            <button class="category-btn" data-category="sti">Sexually</button>
+            <button class="category-btn" data-category="sepsis">Sepsis</button>
+        </div>
+    </nav>
+
+    <div class="disclaimer-banner">
+        <p><strong>EDUCATIONAL TOOL ONLY:</strong> This tool is intended for educational purposes only. Clinical decisions should be made based on professional judgment and current guidelines. The creators of this tool assume no responsibility for clinical use or outcomes.</p>
+    </div>
+
+    <main class="main-content">
+        <!-- Welcome screen -->
+        <section id="welcome-screen" class="welcome-screen">
+            <div class="welcome-content">
+                <h2>Canadian Antibiotic Recommendation Tool</h2>
+                <p>Evidence-based antibiotic recommendations based on Canadian guidelines for resident physicians.</p>
+                <p>Select an infection category above or use the quick access links below.</p>
+                
+                <div class="quick-access">
+                    <h3>Quick Access</h3>
+                    <ul>
+                        <li><a href="#" data-condition="pneumonia-cap">Community Acquired Pneumonia</a></li>
+                        <li><a href="#" data-condition="uti-cystitis">Urinary Tract Infection</a></li>
+                        <li><a href="#" data-condition="skin-cellulitis">Cellulitis</a></li>
+                        <li><a href="#" data-condition="resp-otitis">Otitis Media</a></li>
+                        <li><a href="#" data-condition="resp-pharyngitis">Pharyngitis</a></li>
+                    </ul>
+                </div>
+                
+                <div class="about-section">
+                    <h3>About</h3>
+                    <p>This tool provides Canadian guideline-based antibiotic recommendations for resident physicians who have already identified a likely infection source.</p>
+                    <p>Based on: Bugs & Drugs, CPS Guidelines, Sanford Guide Canada, and Choosing Wisely Canada.</p>
+                    <p>Last updated: April 2025</p>
+                    <div class="disclaimer">
+                        <p><strong>Disclaimer:</strong> This tool is for educational purposes only and is not a substitute for clinical judgment. Always consult official guidelines and consider patient-specific factors when making treatment decisions. The creators of this tool assume no legal responsibility for any decisions made based on this information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category sections -->
+        <section id="category-view" class="category-view hidden">
+            <div class="category-header">
+                <h2 id="category-title">Category Title</h2>
+                <button class="back-btn">Back</button>
+            </div>
+            
+            <div class="filter-buttons">
+                <div class="filter-group">
+                    <h4>Age</h4>
+                    <div class="button-group">
+                        <button class="filter-btn" data-filter="age" data-value="neonate">Neonate (0-28d)</button>
+                        <button class="filter-btn" data-filter="age" data-value="pediatric">Pediatric (≥29d-18y)</button>
+                        <button class="filter-btn active" data-filter="age" data-value="adult">Adult</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Allergies</h4>
+                    <div class="button-group">
+                        <button class="filter-btn" data-filter="allergy" data-value="penicillin">Penicillin</button>
+                        <button class="filter-btn" data-filter="allergy" data-value="cephalosporin">Cephalosporin</button>
+                        <button class="filter-btn" data-filter="allergy" data-value="macrolide">Macrolide</button>
+                        <button class="filter-btn" data-filter="allergy" data-value="sulfa">Sulfa</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Setting</h4>
+                    <div class="button-group">
+                        <button class="filter-btn active" data-filter="setting" data-value="outpatient">Outpatient</button>
+                        <button class="filter-btn" data-filter="setting" data-value="inpatient">Inpatient</button>
+                        <button class="filter-btn" data-filter="setting" data-value="icu">ICU</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Special Populations</h4>
+                    <div class="button-group">
+                        <button class="filter-btn" data-filter="special" data-value="pregnancy">Pregnancy</button>
+                        <button class="filter-btn" data-filter="special" data-value="renal">Renal</button>
+                        <button class="filter-btn" data-filter="special" data-value="hepatic">Hepatic</button>
+                        <button class="filter-btn" data-filter="special" data-value="immunocompromised">Immunocompromised</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conditions-list">
+                <h3>Conditions</h3>
+                <ul id="conditions-container">
+                    <!-- Conditions will be populated here -->
+                </ul>
+            </div>
+            
+            <div class="empiric-coverage">
+                <h3>Empiric Coverage</h3>
+                <div id="empiric-content">
+                    <!-- Empiric coverage will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Condition detail view -->
+        <section id="condition-view" class="condition-view hidden">
+            <div class="condition-header">
+                <h2 id="condition-title">Condition Title</h2>
+                <button class="back-btn">Back</button>
+            </div>
+            
+            <div class="filter-buttons">
+                <div class="filter-group">
+                    <h4>Age</h4>
+                    <div class="button-group">
+                        <button class="filter-btn" data-filter="age" data-value="neonate">Neonate (0-28d)</button>
+                        <button class="filter-btn" data-filter="age" data-value="pediatric">Pediatric (≥29d-18y)</button>
+                        <button class="filter-btn active" data-filter="age" data-value="adult">Adult</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Allergies</h4>
+                    <div class="button-group">
+                        <button class="filter-btn" data-filter="allergy" data-value="penicillin">Penicillin</button>
+                        <button class="filter-btn" data-filter="allergy" data-value="cephalosporin">Cephalosporin</button>
+                        <button class="filter-btn" data-filter="allergy" data-value="macrolide">Macrolide</button>
+                        <button class="filter-btn" data-filter="allergy" data-value="sulfa">Sulfa</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Setting</h4>
+                    <div class="button-group">
+                        <button class="filter-btn active" data-filter="setting" data-value="outpatient">Outpatient</button>
+                        <button class="filter-btn" data-filter="setting" data-value="inpatient">Inpatient</button>
+                        <button class="filter-btn" data-filter="setting" data-value="icu">ICU</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Special Populations</h4>
+                    <div class="button-group">
+                        <button class="filter-btn" data-filter="special" data-value="pregnancy">Pregnancy</button>
+                        <button class="filter-btn" data-filter="special" data-value="renal">Renal</button>
+                        <button class="filter-btn" data-filter="special" data-value="hepatic">Hepatic</button>
+                        <button class="filter-btn" data-filter="special" data-value="immunocompromised">Immunocompromised</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="treatment-options">
+                <div class="treatment-tabs">
+                    <button class="tab-btn active" data-tab="first-line">First-Line</button>
+                    <button class="tab-btn" data-tab="second-line">Second-Line</button>
+                    <button class="tab-btn" data-tab="third-line">Third-Line</button>
+                </div>
+                
+                <div id="first-line" class="treatment-content active">
+                    <!-- First-line treatment will be populated here -->
+                </div>
+                
+                <div id="second-line" class="treatment-content">
+                    <!-- Second-line treatment will be populated here -->
+                </div>
+                
+                <div id="third-line" class="treatment-content">
+                    <!-- Third-line treatment will be populated here -->
+                </div>
+            </div>
+            
+            <div class="notes-section">
+                <h3>Notes</h3>
+                <div id="notes-content">
+                    <!-- Notes will be populated here -->
+                </div>
+            </div>
+            
+            <div class="references-section">
+                <h3>References</h3>
+                <div id="references-content">
+                    <!-- References will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Antibiotic detail view -->
+        <section id="antibiotic-view" class="antibiotic-view hidden">
+            <div class="antibiotic-header">
+                <h2 id="antibiotic-title">Antibiotic Name</h2>
+                <button class="back-btn">Back</button>
+            </div>
+            
+            <div class="antibiotic-info">
+                <div class="info-row">
+                    <span class="info-label">Class:</span>
+                    <span id="antibiotic-class">Antibiotic Class</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Spectrum:</span>
+                    <span id="antibiotic-spectrum">Antibiotic Spectrum</span>
+                </div>
+            </div>
+            
+            <div id="adult-dosing" class="dosing-section">
+                <h3>Adult Dosing</h3>
+                <div id="adult-dosing-content">
+                    <!-- Adult dosing will be populated here -->
+                </div>
+            </div>
+            
+            <div id="pediatric-dosing" class="dosing-section">
+                <h3>Pediatric Dosing</h3>
+                <div class="pediatric-age-toggle">
+                    <button class="ped-age-btn" data-age="neonate">Neonate (0-28d)</button>
+                    <button class="ped-age-btn active" data-age="pediatric">Pediatric (≥29d-18y)</button>
+                </div>
+                <div id="pediatric-dosing-content">
+                    <!-- Pediatric dosing will be populated here -->
+                </div>
+                
+                <div class="calculator">
+                    <h4>Dosing Calculator</h4>
+                    <div class="calculator-form">
+                        <div class="weight-input-group">
+                            <label for="weight-input">Weight (kg):</label>
+                            <input type="number" id="weight-input" min="0" step="0.1">
+                            <button id="calculate-btn">Calculate</button>
+                        </div>
+                        <div class="age-estimate-toggle">
+                            <label>
+                                <input type="checkbox" id="estimate-weight"> Estimate weight from age
+                            </label>
+                            <div class="age-input-group hidden">
+                                <label for="age-input">Age:</label>
+                                <input type="number" id="age-input" min="0" step="0.1">
+                                <select id="age-unit">
+                                    <option value="days">days</option>
+                                    <option value="months">months</option>
+                                    <option value="years" selected>years</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="calculation-result" class="calculation-result">
+                        <!-- Calculation results will be populated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="special-considerations">
+                <h3>Special Considerations</h3>
+                <div id="considerations-content">
+                    <!-- Special considerations will be populated here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Canadian Antibiotic Recommendation Tool &copy; 2025</p>
+        <p>Based on Canadian guidelines. For educational use only.</p>
+        <p class="disclaimer-text">This tool is not a su
+(Content truncated due to size limit. Use line ranges to read in chunks)

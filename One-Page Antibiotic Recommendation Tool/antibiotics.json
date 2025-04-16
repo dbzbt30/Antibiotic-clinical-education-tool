@@ -1,0 +1,451 @@
+{
+  "antibiotics": [
+    {
+      "id": "amoxicillin",
+      "name": "Amoxicillin",
+      "class": "Penicillin",
+      "spectrum": "Gram-positive, some Gram-negative",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["250mg", "500mg", "875mg", "125mg/5mL", "250mg/5mL", "400mg/5mL"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "500mg PO TID",
+        "high_dose": "1g PO TID",
+        "max_daily": "3g"
+      },
+      "pediatric_dosing": {
+        "standard": "40-50mg/kg/day divided TID",
+        "high_dose": "75-90mg/kg/day divided TID",
+        "max_daily": "Based on weight"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "Adjust for severe renal impairment (CrCl <30mL/min)",
+        "Common side effects: diarrhea, rash"
+      ]
+    },
+    {
+      "id": "amoxicillin-clavulanate",
+      "name": "Amoxicillin-Clavulanate",
+      "class": "Penicillin + Beta-lactamase inhibitor",
+      "spectrum": "Gram-positive, Gram-negative, anaerobes",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["500/125mg", "875/125mg", "200/28.5mg/5mL", "400/57mg/5mL"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "500/125mg PO TID or 875/125mg PO BID",
+        "high_dose": "875/125mg PO BID",
+        "max_daily": "4g amoxicillin component"
+      },
+      "pediatric_dosing": {
+        "standard": "40-50mg/kg/day of amoxicillin component divided BID-TID",
+        "high_dose": "90mg/kg/day of amoxicillin component divided BID",
+        "max_daily": "Based on weight"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "Adjust for renal impairment",
+        "Higher risk of diarrhea than amoxicillin alone",
+        "Use high-dose formulation to limit clavulanate (less GI side effects)"
+      ]
+    },
+    {
+      "id": "ceftriaxone",
+      "name": "Ceftriaxone",
+      "class": "Third-generation Cephalosporin",
+      "spectrum": "Broad-spectrum, Gram-positive and Gram-negative",
+      "formulations": [
+        {
+          "form": "injection",
+          "strengths": ["250mg", "500mg", "1g", "2g"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "1-2g IV/IM daily",
+        "high_dose": "2g IV q12h (meningitis)",
+        "max_daily": "4g"
+      },
+      "pediatric_dosing": {
+        "standard": "50-75mg/kg/day IV/IM divided q12-24h",
+        "high_dose": "100mg/kg/day IV divided q12h (meningitis)",
+        "max_daily": "4g"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "No dosage adjustment for renal impairment",
+        "Caution with hyperbilirubinemic neonates",
+        "May cause biliary sludging with prolonged use"
+      ]
+    },
+    {
+      "id": "vancomycin",
+      "name": "Vancomycin",
+      "class": "Glycopeptide",
+      "spectrum": "Gram-positive including MRSA",
+      "formulations": [
+        {
+          "form": "injection",
+          "strengths": ["500mg", "1g", "1.5g", "10g"]
+        },
+        {
+          "form": "oral",
+          "strengths": ["125mg", "250mg"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "15-20mg/kg IV q8-12h (actual body weight)",
+        "high_dose": "25-30mg/kg IV loading dose, then 15-20mg/kg q8-12h",
+        "max_daily": "Based on levels, typically 4g",
+        "oral": "125mg PO QID (C. difficile)"
+      },
+      "pediatric_dosing": {
+        "standard": "40-60mg/kg/day IV divided q6-8h",
+        "high_dose": "60mg/kg/day IV divided q6h (meningitis)",
+        "max_daily": "Based on levels",
+        "oral": "40mg/kg/day PO divided QID (C. difficile), max 2g/day"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "Requires therapeutic drug monitoring",
+        "Adjust for renal impairment",
+        "IV administration may cause Red Man Syndrome (infuse over at least 60 min)",
+        "Oral formulation only effective for C. difficile infection (not absorbed)"
+      ]
+    },
+    {
+      "id": "azithromycin",
+      "name": "Azithromycin",
+      "class": "Macrolide",
+      "spectrum": "Gram-positive, atypical pathogens, some Gram-negative",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["250mg", "500mg", "600mg", "200mg/5mL"]
+        },
+        {
+          "form": "injection",
+          "strengths": ["500mg"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "500mg PO day 1, then 250mg PO daily for 4 days",
+        "high_dose": "500mg PO daily for 3 days",
+        "max_daily": "500mg",
+        "respiratory": "500mg PO daily for 3 days",
+        "STI": "1g PO single dose (chlamydia)"
+      },
+      "pediatric_dosing": {
+        "standard": "10mg/kg PO day 1 (max 500mg), then 5mg/kg PO daily for 4 days (max 250mg)",
+        "high_dose": "10mg/kg/day PO for 3 days (max 500mg/day)",
+        "max_daily": "500mg",
+        "otitis": "30mg/kg PO single dose (max 1.5g)"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "No dosage adjustment for renal impairment",
+        "QT interval prolongation risk",
+        "Drug interactions with statins, warfarin, and other QT-prolonging drugs",
+        "Take on empty stomach or with food, but not with antacids"
+      ]
+    },
+    {
+      "id": "ciprofloxacin",
+      "name": "Ciprofloxacin",
+      "class": "Fluoroquinolone",
+      "spectrum": "Gram-negative, some Gram-positive",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["250mg", "500mg", "750mg"]
+        },
+        {
+          "form": "injection",
+          "strengths": ["200mg", "400mg"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "500mg PO BID or 400mg IV q12h",
+        "high_dose": "750mg PO BID or 400mg IV q8h",
+        "max_daily": "1.5g PO or 1.2g IV",
+        "UTI": "250-500mg PO BID for 3-7 days (uncomplicated)",
+        "respiratory": "750mg PO BID for 7-14 days"
+      },
+      "pediatric_dosing": {
+        "standard": "20-30mg/kg/day PO divided BID (max 1.5g/day)",
+        "high_dose": "30mg/kg/day IV divided q8-12h (max 1.2g/day)",
+        "max_daily": "1.5g PO or 1.2g IV",
+        "note": "Not first-line in pediatrics due to potential for cartilage damage"
+      },
+      "special_considerations": [
+        "Pregnancy category C - avoid if possible",
+        "Adjust for renal impairment",
+        "Reserve as last-line therapy due to resistance concerns and adverse effects",
+        "Risk of tendinitis/tendon rupture, peripheral neuropathy, CNS effects",
+        "Avoid in children/adolescents if possible",
+        "Take 2 hours apart from antacids, iron, calcium, zinc"
+      ]
+    },
+    {
+      "id": "nitrofurantoin",
+      "name": "Nitrofurantoin",
+      "class": "Nitrofuran",
+      "spectrum": "Common uropathogens (E. coli, Enterococcus, Staphylococcus)",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["50mg", "100mg", "25mg/5mL"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "100mg PO BID",
+        "macrocrystal": "100mg PO BID",
+        "monohydrate/macrocrystal": "100mg PO BID",
+        "max_daily": "200mg",
+        "UTI": "100mg PO BID for 5 days (uncomplicated cystitis)"
+      },
+      "pediatric_dosing": {
+        "standard": "5-7mg/kg/day PO divided QID (max 400mg/day)",
+        "macrocrystal": "5-7mg/kg/day PO divided QID",
+        "max_daily": "400mg"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe, avoid at term (36+ weeks)",
+        "Contraindicated if CrCl <30mL/min",
+        "Contraindicated in G6PD deficiency",
+        "Take with food to improve absorption and reduce GI upset",
+        "May cause pulmonary toxicity with long-term use",
+        "Urine may turn brown-yellow"
+      ]
+    },
+    {
+      "id": "trimethoprim-sulfamethoxazole",
+      "name": "Trimethoprim-Sulfamethoxazole (TMP-SMX)",
+      "class": "Folate antagonist",
+      "spectrum": "Gram-positive and Gram-negative, including MRSA",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["80/400mg (SS)", "160/800mg (DS)", "40/200mg per 5mL"]
+        },
+        {
+          "form": "injection",
+          "strengths": ["80/400mg per 5mL"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "1-2 DS tablets PO BID",
+        "high_dose": "5mg/kg TMP component IV q8h",
+        "max_daily": "320mg TMP component",
+        "UTI": "1 DS tablet PO BID for 3 days (uncomplicated cystitis)",
+        "MRSA": "1-2 DS tablets PO BID"
+      },
+      "pediatric_dosing": {
+        "standard": "8-12mg/kg/day TMP component PO/IV divided BID",
+        "high_dose": "15-20mg/kg/day TMP component PO/IV divided q6-8h (severe infections)",
+        "max_daily": "320mg TMP component",
+        "UTI": "8mg/kg/day TMP component PO divided BID for 3-5 days"
+      },
+      "special_considerations": [
+        "Pregnancy category C - avoid in first trimester and near term",
+        "Adjust for renal impairment",
+        "Contraindicated if CrCl <15mL/min",
+        "Monitor for rash, bone marrow suppression, hyperkalemia",
+        "Drug interactions with warfarin, phenytoin, methotrexate",
+        "Ensure adequate hydration"
+      ]
+    },
+    {
+      "id": "metronidazole",
+      "name": "Metronidazole",
+      "class": "Nitroimidazole",
+      "spectrum": "Anaerobes, protozoa",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["250mg", "500mg"]
+        },
+        {
+          "form": "injection",
+          "strengths": ["500mg"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "500mg PO/IV TID",
+        "high_dose": "500mg PO/IV q6h",
+        "max_daily": "4g",
+        "C. difficile": "500mg PO TID for 10-14 days",
+        "anaerobic": "500mg PO/IV TID for 7-10 days"
+      },
+      "pediatric_dosing": {
+        "standard": "30mg/kg/day PO/IV divided TID (max 2g/day)",
+        "high_dose": "40mg/kg/day PO/IV divided TID (max 4g/day)",
+        "max_daily": "4g",
+        "C. difficile": "30mg/kg/day PO divided TID for 10 days (max 2g/day)"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "No significant dosage adjustment for renal impairment",
+        "Disulfiram-like reaction with alcohol (avoid alcohol during and for 3 days after)",
+        "May cause metallic taste, neuropathy with prolonged use",
+        "Drug interactions with warfarin, lithium, phenytoin"
+      ]
+    },
+    {
+      "id": "piperacillin-tazobactam",
+      "name": "Piperacillin-Tazobactam",
+      "class": "Penicillin + Beta-lactamase inhibitor",
+      "spectrum": "Broad-spectrum, including Pseudomonas",
+      "formulations": [
+        {
+          "form": "injection",
+          "strengths": ["2.25g", "3.375g", "4.5g"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "3.375g IV q6h or 4.5g IV q8h",
+        "high_dose": "4.5g IV q6h",
+        "max_daily": "18g piperacillin component",
+        "extended_infusion": "4.5g IV q8h (infused over 4 hours)"
+      },
+      "pediatric_dosing": {
+        "standard": "300mg/kg/day piperacillin component IV divided q6-8h (max 16g/day)",
+        "high_dose": "400mg/kg/day piperacillin component IV divided q6-8h (max 18g/day)",
+        "max_daily": "18g piperacillin component"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "Adjust for renal impairment",
+        "Extended infusion may improve efficacy for serious infections",
+        "Monitor for hypokalemia, neutropenia with prolonged use",
+        "Higher sodium content than other antibiotics"
+      ]
+    },
+    {
+      "id": "meropenem",
+      "name": "Meropenem",
+      "class": "Carbapenem",
+      "spectrum": "Very broad-spectrum, including ESBL-producing organisms",
+      "formulations": [
+        {
+          "form": "injection",
+          "strengths": ["500mg", "1g"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "1g IV q8h",
+        "high_dose": "2g IV q8h (meningitis)",
+        "max_daily": "6g",
+        "extended_infusion": "1g IV q8h (infused over 3 hours)"
+      },
+      "pediatric_dosing": {
+        "standard": "60mg/kg/day IV divided q8h (max 3g/day)",
+        "high_dose": "120mg/kg/day IV divided q8h (meningitis, max 6g/day)",
+        "max_daily": "6g"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "Adjust for renal impairment",
+        "Reserve for serious infections due to resistance concerns",
+        "Lower seizure risk than imipenem",
+        "Extended infusion may improve efficacy for serious infections"
+      ]
+    },
+    {
+      "id": "doxycycline",
+      "name": "Doxycycline",
+      "class": "Tetracycline",
+      "spectrum": "Broad-spectrum, atypical pathogens, MRSA",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["50mg", "75mg", "100mg", "200mg"]
+        },
+        {
+          "form": "injection",
+          "strengths": ["100mg"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "100mg PO/IV BID day 1, then 100mg PO/IV daily or BID",
+        "high_dose": "100mg PO/IV BID",
+        "max_daily": "200mg",
+        "respiratory": "100mg PO BID for 5-7 days",
+        "MRSA": "100mg PO BID"
+      },
+      "pediatric_dosing": {
+        "standard": "For children >8 years: 4mg/kg/day PO/IV divided BID day 1, then 2-4mg/kg/day divided daily-BID",
+        "high_dose": "For children >8 years: 4mg/kg/day PO/IV divided BID",
+        "max_daily": "200mg",
+        "note": "Generally avoided in children <8 years due to dental staining"
+      },
+      "special_considerations": [
+        "Pregnancy category D - contraindicated",
+        "No dosage adjustment for renal impairment",
+        "Avoid in children <8 years (dental staining)",
+        "Take with full glass of water, avoid lying down for 30 minutes",
+        "Photosensitivity risk",
+        "Decreased efficacy with calcium, iron, antacids, dairy products"
+      ]
+    },
+    {
+      "id": "cephalexin",
+      "name": "Cephalexin",
+      "class": "First-generation Cephalosporin",
+      "spectrum": "Gram-positive, limited Gram-negative",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["250mg", "500mg", "125mg/5mL", "250mg/5mL"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "500mg PO QID",
+        "high_dose": "1g PO QID",
+        "max_daily": "4g",
+        "cellulitis": "500mg PO QID for 5-7 days",
+        "UTI": "500mg PO QID for 7-14 days"
+      },
+      "pediatric_dosing": {
+        "standard": "25-50mg/kg/day PO divided QID (max 4g/day)",
+        "high_dose": "75-100mg/kg/day PO divided QID (max 4g/day)",
+        "max_daily": "4g",
+        "UTI": "50mg/kg/day PO divided QID for 7-14 days"
+      },
+      "special_considerations": [
+        "Pregnancy category B - generally safe",
+        "Adjust for severe renal impairment",
+        "Alternative for patients with non-anaphylactic penicillin allergy",
+        "Generally well-tolerated"
+      ]
+    },
+    {
+      "id": "clindamycin",
+      "name": "Clindamycin",
+      "class": "Lincosamide",
+      "spectrum": "Gram-positive, anaerobes",
+      "formulations": [
+        {
+          "form": "oral",
+          "strengths": ["150mg", "300mg", "75mg/5mL"]
+        },
+        {
+          "form": "injection",
+          "strengths": ["150mg/mL", "300mg/2mL", "600mg/4mL", "900mg/6mL"]
+        }
+      ],
+      "adult_dosing": {
+        "standard": "300-450mg PO QID or 600mg IV q8h",
+        "high_dose": "600-900mg IV q8h",
+        "max_daily": "2.7g IV or 1.8g PO",
+        "MRSA": "300-450mg PO QID",
+        "necrotizing": "600-900mg IV q8h (part of combination therapy)"
+      },
+      "pediatric_dosing": {
+        "standard": "20-30mg/kg/day PO divided TID-QID (max 1.8g/
+(Content truncated due to size limit. Use line ranges to read in chunks)

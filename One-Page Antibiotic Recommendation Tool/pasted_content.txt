@@ -1,0 +1,47 @@
+Here are updates I want you to incorporate:
+
+
+1. Streamlined Pediatric Structure
+• Use 2 pediatric categories only:
+• Neonate (0–28 days)
+• Pediatric (≥29 days to 18 years)
+• Antibiotic recommendations must reflect:
+• Age-specific contraindications (e.g., ceftriaxone in neonates)
+• Weight-based dosing (mg/kg/day), with:
+• Total daily dose
+• Per-dose calculation
+• Formulation suggestion (e.g., 5 mL BID of 250 mg/5 mL suspension)
+
+2. In-line Pediatric Calculator
+• Embed a seamless live calculator beside each antibiotic:
+• Weight input in kilograms
+• Auto-calculates per-dose and total daily dose
+• Rounds to standard pediatric formulations
+• Warns if dose exceeds max adult dose
+• Allows age-based weight estimate toggle if weight unknown
+
+3. Real-Time, Button-Based Filters (No Sidebar, No “Apply”)
+
+Eliminate the sidebar + “Apply Filters” model. Instead, embed filter options directly into the main UI as:
+• Clickable buttons (toggle style) or pills across the top or within infection module cards
+• Dynamic updates: once a user clicks/toggles any of these, antibiotic list updates immediately
+
+Key Filter Buttons:
+• Age: [Neonate] [Child 2–18y] [Adult]
+• Allergies: [Penicillin] [Cephalosporin] [Macrolide] [Sulfa]
+• Setting: [Outpatient] [Inpatient] [ICU]
+• Special Populations: [Pregnancy] [Renal] [Hepatic] [Immunocompromised]
+
+All buttons should be:
+• Single click to toggle
+• Styled in flat modern UI (rounded, chic, no dropdowns)
+• Sticky or persistently visible across the page
+• Designed so any change updates antibiotic options in real time
+
+4. Design & Layout updated
+- I don’t want a sticky header and footer that remains when scrolling down
+
+5. Make sure that this website is clearly noted to be an education tool and that no responsibility for clinical use. Please highlight this where necessary and make sure that there are no legal repercussions anywhere for any suggestions made on the website
+6. The content is not complete on every single condition and antibiotics. The vast majority at this current time show “No treatment recommendations available for this condition”. Please use the Canadian guidelines that we referenced to ensure that everything is up to completion and detailed
+7. For all the empiric coverage sections please also include a regimen, dose & route (paediatric dose), duration, notes and whatever you think is necessary as well 
+8. From each point, ask yourself from and infectious disease, and UI designer lense, is this the best this website can be in terms of usability, clinical tool, functionality, and then optimize the website based your answer.
